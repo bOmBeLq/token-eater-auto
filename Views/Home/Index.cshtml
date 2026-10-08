@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Home";
+}
+<section class="hero">
+    <div>
+        <p class="eyebrow">A calmer way to consume</p>
+        <h1>Make every token <em>count.</em></h1>
+        <p class="lead">A private workspace for deliberate AI sessions, clear limits, and fewer distractions.</p>
+        @if (User.Identity?.IsAuthenticated == true)
+        {
+            <a class="button" asp-controller="Dashboard" asp-action="Index">Open dashboard</a>
+        }
+        else
+        {
+            <a class="button" asp-controller="Account" asp-action="Register">Start your account</a>
+        }
+    </div>
+    <aside class="hero-card" aria-label="Token usage illustration">
+        <span class="card-label">Today's appetite</span>
+        <strong>2,840</strong>
+        <div class="meter"><i></i></div>
+        <small>of 8,000 tokens</small>
+    </aside>
+</section>

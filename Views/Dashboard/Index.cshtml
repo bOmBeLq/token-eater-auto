@@ -1,0 +1,9 @@
+@{ ViewData["Title"] = "Dashboard"; }
+<section class="dashboard">
+    <p class="eyebrow">Private workspace</p>
+    <h1>Welcome, <em>@User.Identity?.Name</em></h1>
+    <div class="dashboard-grid">
+        <article class="metric-card"><span>Account</span><strong>Verified</strong><small>Your email is confirmed and protected.</small></article>
+        <article class="metric-card accent"><span>Next step</span><strong>Make it yours</strong><small>Review the identity attached to this workspace.</small><a asp-controller="Profile" asp-action="Index">Open profile</a></article>
+    </div>
+</section>

@@ -1,0 +1,8 @@
+**/bin
+**/obj
+.git
+.idea
+.venv
+.pytest_cache
+specs
+.env

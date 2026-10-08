@@ -1,0 +1,8 @@
+bin/
+obj/
+.venv/
+.idea/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+.env

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Token Eater</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" asp-controller="Home" asp-action="Index"><span>TE</span> Token Eater</a>
+        <nav aria-label="Primary navigation">
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <a asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                <a asp-controller="Profile" asp-action="Index">Profile</a>
+                <form asp-controller="Account" asp-action="Logout" method="post">
+                    <button class="link-button" type="submit">Log out</button>
+                </form>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Login">Log in</a>
+                <a class="nav-cta" asp-controller="Account" asp-action="Register">Create account</a>
+            }
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>Built for focused work, one token at a time.</footer>
+</body>
+</html>
