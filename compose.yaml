@@ -36,7 +36,7 @@ services:
   mailpit:
     image: axllent/mailpit:v1.27
     ports:
-      - "8025:8025"
+      - "127.0.0.1:${MAILPIT_PORT:-18025}:8025"
 
 volumes:
   postgres_data:
